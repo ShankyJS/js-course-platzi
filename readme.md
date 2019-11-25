@@ -5,3 +5,19 @@ You don't have to specify what type of data will be stored in a variable. JavaSc
 The Typed languages (like Java, C#) need to declare the variable's type and can't be changed. 
 
 "This is both a blessing and a curse" because this flexibility can helps us to protect us from spend hours debugging something because a type error. 
+
+## Class 2 (tips)
+
+Here is a way to insert JavaScript code in texts, also this is the solution for the first test, show to the user his first letter. 
+
+````
+alert(`La primera letra de tu nombre es ${nombre.charAt(0)}`)
+````
+
+On this class we learn how to work with the most common strings on JavaScirpts, here is a useful function that allows you to concatenate substrings values into another one. 
+
+````
+var str2 = nombre.substr(1, 2);
+````
+
+This will take the second and third letter of my name. 
