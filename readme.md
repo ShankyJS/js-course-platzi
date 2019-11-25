@@ -23,3 +23,17 @@ var str2 = nombre.substr(1, 2);
 This will take the second and third letter of my name. 
 
 ## Class 3
+
+The way that JS saves the decimals numbers isn't precise, that's why we need to use the global tool ``math``.
+
+In this class we used ``math.round(var)`` to get the short value of the floating number.
+
+````
+var total = Math.round(winePrice * 100 * 3)/ 100;
+````
+
+We can also show more decimals using the next function of JS.
+
+```
+var totalStr = total.toFixed(3);
+```
