@@ -69,3 +69,48 @@ function printAge(n, a) {
 printAge(prompt("Type your name"), prompt('Type your age'));
 
 ```
+
+## Class 5 (Functions part2.)
+
+If a variable is not defined in a local function, it is a Global Var and is accesible from every function.
+
+If the variable is global it is accesible to all (window (on browsers)) or NodeJS enviroments on servers. 
+
+`` window.name `` 
+
+Let's see this example: 
+
+
+````
+var name = 'Jhan';
+
+function printNameInUpperCase() {
+  name = name.toUpperCase();
+  console.log(name);
+}
+
+printNameInUpperCase();
+
+````
+
+Here, we have the problem that the function is changing a Global Variable and it's generating a side deffect because when we invoke that function it will affect another things on our enviroment.
+
+So, how we can improve this code? 
+
+````
+
+var name = 'Jhan';
+
+function printNameInUpperCase(name) {
+  name = name.toUpperCase()
+  console.log(n)
+}
+
+printNameInUpperCase(name);
+````
+
+We created a local variable that just exists on the local function (n), if we access to our global var = name, the value will be intact!.
+
+N is not defined on our enviroment, because just lives on the function, however we can write the same global name on the local function but just will live on the function
+
+## Class 6 (Objects)
