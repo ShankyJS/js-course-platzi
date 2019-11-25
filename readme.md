@@ -21,3 +21,5 @@ var str2 = nombre.substr(1, 2);
 ````
 
 This will take the second and third letter of my name. 
+
+## Class 3
