@@ -14,6 +14,21 @@ Here is a way to insert JavaScript code in texts, also this is the solution for 
 alert(`La primera letra de tu nombre es ${nombre.charAt(0)}`)
 ````
 
+Other solution
+
+````
+
+var name = prompt ('Give me your name');
+
+function returnsTheLastLetter(n) {
+  alert(`The last letter off your name is: ` + n.charAt(n.length-1))
+}
+
+returnsTheLastLetter(name);
+
+
+````
+
 On this class we learn how to work with the most common strings on JavaScirpts, here is a useful function that allows you to concatenate substrings values into another one. 
 
 ````
@@ -36,4 +51,21 @@ We can also show more decimals using the next function of JS.
 
 ```
 var totalStr = total.toFixed(3);
+```
+
+## Class 4 (Functions)
+
+The functions are reusables code snippets (in a very short way).
+
+In JS we can send another values (unexpected values to functions) and It will keep working :D
+
+```
+var name = 'Jhan', age = 19;
+
+function printAge(n, a) {
+  console.log(`${n} has ${a} years old`);
+}
+
+printAge(prompt("Type your name"), prompt('Type your age'));
+
 ```
