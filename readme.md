@@ -136,7 +136,7 @@ function printNameInUpperCase(persona) {
 printNameInUpperCase(jhan);
 ````
 
-Another way to do it.
+````Another way to do it.
 
 ````
 var jhan = {
@@ -153,7 +153,7 @@ var dario = {
 
 
 // This is a new way to look for some objects.
-
+````
 function printNameInUpperCase({ name }) {
   console.log(name.toUpperCase());
 }
@@ -163,3 +163,34 @@ printNameInUpperCase(dario);
 printNameInUpperCase({ name : 'Pepito'})
 printNameInUpperCase({ name: 'Gomez'})
 ````
+
+## Class 7 (Dividing objects)
+
+It's possible to Destructure Propertys and use it in another functions.
+
+The test for this class was to do a function that can returns your name and age, this was my best solution for this example.
+
+````
+function printNameAndAge(person) {
+    //Hola, me llamo ____ y tengo ___ años
+    var name = person.name;
+    var age = person.age;
+    return(console.log('Hola, me llamo ' + name + ' y tengo ' + age + ' años.'));
+}
+
+printNameAndAge(jhan);
+````
+
+But, there was another good ways to do it.
+
+````
+function printNameAndAge2(user) {
+    var {name, age} = user;
+return(console.log(`Hola, me llamo ${name} y tengo ${age} años. `));
+}
+
+printNameAndAge2(jhan);
+
+````
+
+## Class 8 (Parameters as references or values.)
