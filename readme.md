@@ -114,3 +114,52 @@ We created a local variable that just exists on the local function (n), if we ac
 N is not defined on our enviroment, because just lives on the function, however we can write the same global name on the local function but just will live on the function
 
 ## Class 6 (Objects)
+
+An object is a collection of properties, a property is an association between a name (or key) and a value. 
+
+It's possible to create a function that can look for a value in a object.
+
+````
+var dario = {
+  name : 'Darío',
+  last_name : 'Susnisky',
+  age : 27
+}
+
+
+
+function printNameInUpperCase(persona) {
+  var name = persona.name.toUpperCase()
+  console.log(name);
+}
+
+printNameInUpperCase(jhan);
+````
+
+Another way to do it.
+
+````
+var jhan = {
+  name : 'Jhan',
+  last_name : 'Silva',
+  age : 19
+}
+
+var dario = {
+  name : 'Darío',
+  last_name : 'Susnisky',
+  age : 27
+}
+
+
+// This is a new way to look for some objects.
+
+function printNameInUpperCase({ name }) {
+  console.log(name.toUpperCase());
+}
+
+printNameInUpperCase(jhan);
+printNameInUpperCase(dario);
+printNameInUpperCase({ name : 'Pepito'})
+printNameInUpperCase({ name: 'Gomez'})
+````
