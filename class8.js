@@ -38,8 +38,9 @@ printNameAndAge2(jhan);
 
 
 function birthday(person) {
-    return {
-        ...person,
-        age: person.age +1
-    }
+  return {
+      ...person,
+      age: person.age + 1
+  }
 }
+

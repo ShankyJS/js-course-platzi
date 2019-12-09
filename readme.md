@@ -194,3 +194,37 @@ printNameAndAge2(jhan);
 ````
 
 ## Class 8 (Parameters as references or values.)
+
+JavaScript works different with the objects, in this example the values of that object is working as a reference, that why because when we invoke that function with a  ```jhan.age```  the age value doesn't changes. 
+
+````
+
+function birthday(age) {
+
+  age +=1
+
+}
+````
+
+If we want to create a new object without change the older, we can do the following.
+
+````
+
+function birthday(person) {
+  return {
+      ...person,
+      age: person.age + 1
+  }
+}
+
+````
+With this we can create a new object with the name olderJhan  
+````
+var olderJhan = birthday(jhan)
+````
+
+This will return this object: ```{name: "Jhan", last_name: "Silva", age: 20}```
+
+### The Spread Operator (...)
+
+Is a new implementation on ES6. It creates a duplicated object, so we can modify it without changing the original "person object".
