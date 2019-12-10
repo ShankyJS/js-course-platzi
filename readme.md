@@ -228,3 +228,50 @@ This will return this object: ```{name: "Jhan", last_name: "Silva", age: 20}```
 ### The Spread Operator (...)
 
 Is a new implementation on ES6. It creates a duplicated object, so we can modify it without changing the original "person object".
+
+## Class 9 (Comparisions on JS)
+
+Two strings are strictly the same when the same sequence of characters, the same length and the same characters in the operations correspond.
+
+Example: 
+
+````
+var x = 1, y = '1'; (True)
+
+````
+
+Two numbers are strictly equal when they are numerically equal. NaN is not equal to anything, including NaN. Positive and negative zeros are equal to each other.
+
+````
+var x = 100, y =100;
+````
+
+Two Boolean operators are strictly equal if both are 'TRUE' or both are 'FALSE'.
+
+Two different objects are never the same for strict or abstract comparisons (===, ==).
+
+An expression that compares objects is only true if the operators refer to the same object.
+
+````
+
+var jhan = {
+    name : 'Jhan'
+}
+
+var otherPerson = jhan;
+
+
+````
+
+The Null and Undefined types are strictly equal to each other and abstractly equal to each other.
+
+````
+1 == “1” --> true
+1 === “1” --> false (son iguales pero uno es un número y el otro una cadena)
+-1 == true --> true
+1 == true --> true (tanto el -1 como el 1 se consideran equivalentes a un verdadero cuando se tratan como booleanos)
+-1 === true --> false
+1 === true --> false
+1.0 == 1 --> true
+1.0 === 1 --> true también ¡Ojo! JavaScript no distingue subtipos entre los números por lo que ambos son numéricos y por lo tanto del mismo tipo. "
+````
