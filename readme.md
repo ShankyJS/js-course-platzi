@@ -275,3 +275,25 @@ The Null and Undefined types are strictly equal to each other and abstractly equ
 1.0 == 1 --> true
 1.0 === 1 --> true también ¡Ojo! JavaScript no distingue subtipos entre los números por lo que ambos son numéricos y por lo tanto del mismo tipo. "
 ````
+
+## Class 10 (Conditions)
+
+In this class we check how to compare elements or objects, with boolean data and numbers. 
+
+The test of this class was to do an algorithm that print if the person is mayor age or under age. 
+
+Here is how I solved it. 
+
+````
+
+function UnderAgeOverAge(person){
+    if (jhan.age >= 18) {
+        console.log(`${jhan.name} is over age`);
+    } else {
+        console.log(`${jhan.name} is under age`);
+    }
+}
+
+UnderAgeOverAge(jhan);
+
+````
