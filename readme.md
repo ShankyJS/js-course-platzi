@@ -330,3 +330,42 @@ function printIfIsLegal(person) {
 
 ````
 
+## Class 12 - Arrow FUnctions
+
+In JavaScript there is another way to write functions, with the Arrow
+Functions.
+
+1) We can assign a function to a var, that's a uncommon programming language funcionability. 
+
+
+````
+
+// This is a anonym function, because don't have name.
+const isMayor = function(person) {
+    return person.age >= LEGAL_AGE;
+}
+
+````
+
+2) We can write the same code with an arrow function. 
+
+````
+//JavaScript let to delete the return if the function just returns one value.
+//Here just takes the parameter age of the object. Destructure
+
+const isMayor = ({ age }) => age >= LEGAL_AGE;
+
+````
+
+Let access function, returns if a person can see content
+
+````
+function letAccess(person) {
+    if(!isMayor(person)) {
+        console.log('Acceso denegado');
+    } else {
+        console.log('Acceso aceptado');
+    }
+}
+
+````
