@@ -484,3 +484,43 @@ default:
     console.log('That doesn't exists');
 break;
 ````
+
+## Class 17 (Introduction to Arrays)
+
+In this lesson I learned how to work with Arrays and collections on JS.
+
+For example if we have at least 2 objects.
+
+````
+var eze = {
+    name: 'eze',
+    last_name: 'romero',
+    height: 1.25
+}
+
+var juan = {
+    name: 'Juan',
+    last_name: 'Silva', 
+    height: 1.80
+}
+
+````
+
+We can create an array called persons and store the objects in that var
+
+````
+var persons = [eze, juan];
+````
+
+So we can acces to that objects with this: ``persons[0]`` (this will call Eze).
+
+And we can access to his attributes too. ``persons[0].height``
+
+We can also iterate an array for printing all the objects inside.
+
+````
+for (let i = 0; i < persons.length; i++) {
+    var person = persons[i];
+    console.log(`${person.name} lenghts ${person.height} mts`)
+}
+````
