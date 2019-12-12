@@ -420,3 +420,22 @@ console.log(`In the end of the year ${jhan.name} weights ${jhan.weight.toFixed(2
 
 
 ````
+
+## Class 14: While structure.
+
+Today I learned how to do a While cycle on a little example about weight reduction, using a const number that is a "goal" given by our nutritionist :rofl:
+
+````
+while (jhan.weight > GOAL) {
+    if (eatsALot()) {
+        increaseWeight(jhan);
+    }
+
+    if (doExercise()) {
+        decreaseWeight(jhan);
+    }
+
+    dias += 1;
+}
+
+````
