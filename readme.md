@@ -524,3 +524,49 @@ for (let i = 0; i < persons.length; i++) {
     console.log(`${person.name} lenghts ${person.height} mts`)
 }
 ````
+
+## Class 18 (Filter arrays)
+
+It's possible to filter arrays attributes without do for cycles, like in this case when I filtered the tall and short people from a group of persons.
+
+````
+
+var eze = { 
+    name: 'Eze'
+    last_name: 'Romero',
+    height: 150
+}
+
+var Jhan = { 
+    name: 'Jhan'
+    last_name: 'Silva',
+    height: 150
+}
+
+var persons = [eze, Jhan];
+````
+
+Now we can declare an arrow function that returns the tall and short persons.
+
+````
+const isTall = person => height >= 1.8;
+
+const isShort = person => height < 1.8;
+````
+
+This is the part when we filter the arrays with the Array filter function, his structure is: 
+
+```var tallPersons = persons.filter(FUNCTION_THAT_RETURNS_THE_FILTERED_VALUE);```
+
+These are the filters for our functions:
+
+````
+
+var tallPersons = persons.filter(isTall);
+
+var shortPersons = persons.filter(isShort);
+
+````
+````
+console.log(tallPersons + shortPersons);
+````
