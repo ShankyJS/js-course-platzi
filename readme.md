@@ -461,3 +461,26 @@ if (contador = 1) {
     console.log(`Fui a ver si puso huevos la tunca ${contador} veces`)
 }
 ````
+
+## Class 16: Switch structure.
+
+This lets what code to execute depending a lot of conditions.
+
+The basic structure is this; 
+
+````
+var symbol = prompt('What is your zodiacal symbol?');
+
+case 'aries':
+    console.log('Yo tambien soy aries');
+break;
+    
+````
+
+You can follow up writing a lot of cases but you can manage the exceptions with the default case;
+
+````
+default: 
+    console.log('That doesn't exists');
+break;
+````
