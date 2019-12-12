@@ -439,3 +439,5 @@ while (jhan.weight > GOAL) {
 }
 
 ````
+
+## Class 15: Do-while structure.
