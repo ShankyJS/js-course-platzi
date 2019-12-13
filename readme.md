@@ -570,3 +570,65 @@ var shortPersons = persons.filter(isShort);
 ````
 console.log(tallPersons + shortPersons);
 ````
+
+## Transform an Array
+
+In this class I learned how to use map to return new arrays from an actual element.
+
+Map is a method defined on array.prototype, you can call it from every array and accepts a callback as first argument.
+
+When you call an array, this runs the callback in each element inside it and returns a new array with the values that the callback return.
+
+````
+var tasks = [
+    
+    {
+        'name'      : 'Write envato Tuts',
+        'duration'  :  120
+    },
+    
+    {
+        'name'      : 'Work out',
+        'duration'  :  60
+    },
+
+    {
+        'name'      : 'Procastinate on Duolingo',
+        'duration'  :  240
+    }
+
+];
+
+console.log(tasks);
+
+// If we want to create a new array with the name of every single task
+// We can use the For cicle to do it. 
+
+var task_names = [];
+
+for (var i=0; i < tasks.length; i += 1) {
+    task_names.push(tasks[i].name);
+}
+
+// We can do it with For Each that works as a for but it checks every
+// iteration with the index agains the array lenght.
+
+var task_names_4each = [];
+
+tasks.forEach(function (task){
+    task_names_4each.push(task.name);
+});
+
+// And we can do it using map.
+
+var task_names_map = tasks.map(function (task, index, array){
+    return task.name;
+});
+
+// or 
+
+var task_names_arrow_map = tasks.map((task) => task.name);
+
+
+
+````
