@@ -632,3 +632,30 @@ var task_names_arrow_map = tasks.map((task) => task.name);
 
 
 ````
+
+
+## Class 20 (Reduce items on JavaScript)
+
+``Reduce`` takes all the elements of an array and reduces it to a single value. 
+
+As ``map`` and ``filter``, reduce it's defined on Array.prototype and it's available for every array and pass a callback as his first argument (function invoke) but takes a second argument (optional) and it's the starter value for the elements on the array.
+
+````
+//We are going to sum all the books quantity.
+
+// var acum = 0;
+
+// for (var i=0; i < persons.length; i++) {
+//     acum = acum + persons[i].books_quantity;
+// }
+
+// We need 2 things, a function and the initial value of the acumulator
+
+const reducer = (acum, { books_quantity }) =>  acum + person.books_quantity;
+
+
+var totalBooks = persons.reduce(reducer, 0)
+
+console.log(`All have ${totalBooks} books`);
+
+````
