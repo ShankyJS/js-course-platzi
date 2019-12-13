@@ -9,7 +9,7 @@ var juan = {
     name: 'juan',
     last_name: 'martinez',
     height: 1.80,
-    books_quantity: 90
+    books_quantity: 91
 }
 
 var jorge = {
@@ -39,7 +39,7 @@ var persons = [jhan, juan, jorge, eze];
 
 // We need 2 things, a function and the initial value of the acumulator
 
-const reducer = (acum, { books_quantity }) =>  acum + person.books_quantity;
+const reducer = (acum, { books_quantity }) =>  acum + books_quantity;
 
 
 var totalBooks = persons.reduce(reducer, 0)

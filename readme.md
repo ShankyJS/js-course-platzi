@@ -651,7 +651,7 @@ As ``map`` and ``filter``, reduce it's defined on Array.prototype and it's avail
 
 // We need 2 things, a function and the initial value of the acumulator
 
-const reducer = (acum, { books_quantity }) =>  acum + person.books_quantity;
+const reducer = (acum, { books_quantity }) =>  acum + books_quantity;
 
 
 var totalBooks = persons.reduce(reducer, 0)
