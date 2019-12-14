@@ -722,3 +722,21 @@ The best way to write code is:
 * The functions 
 * The instances of the constructor.
 * Invoking the functions.
+
+## Class 23 (The context about who is this in an Arrow Function)
+
+This is not who we are waiting to be, In a arrow function "this" points to the this outside our function, like in this case:
+
+````
+    Person.prototype.soyAlto = () => {
+        debugger
+        return this.height > 1.8
+    }
+
+// It will take the this out of the prototype function, an this outside that function is window.
+
+````
+
+Window.height don't exists, so this will return a fail.
+
+## Class 24 (The dark side about classes on JavaScript.)
