@@ -711,3 +711,14 @@ Person.prototype.istall = function () {
 }
 
 ````
+
+### Modifing the prototype.
+
+If we modify a prototype it will be changed on all the code.
+
+The best way to write code is:
+
+* First the constructor.
+* The functions 
+* The instances of the constructor.
+* Invoking the functions.
