@@ -641,6 +641,7 @@ var task_names_arrow_map = tasks.map((task) => task.name);
 As ``map`` and ``filter``, reduce it's defined on Array.prototype and it's available for every array and pass a callback as his first argument (function invoke) but takes a second argument (optional) and it's the starter value for the elements on the array.
 
 ````
+
 //We are going to sum all the books quantity.
 
 // var acum = 0;
@@ -657,5 +658,56 @@ const reducer = (acum, { books_quantity }) =>  acum + books_quantity;
 var totalBooks = persons.reduce(reducer, 0)
 
 console.log(`All have ${totalBooks} books`);
+
+````
+
+## Class 21 (Javascript classes)
+
+JavaScript is a prototype-based language, every object in JavaScript has a hidden internal property called [[ProtoType]].
+
+Until recentry developers used constructor functions to mimic an object-oriented design patter in JavaScript.
+
+In the prototype we created a person object (as all in this platzi course).
+
+This is the constructor, where we defined the number of parameters of our object.
+
+````
+
+//Constructor, class
+
+function Person(name, lastname, height) {
+    this.name = name;
+    this.lastname = lastname;
+    this.height = height;
+}
+
+````
+
+Now we are going to create some instances of the constructor.
+
+````
+
+var jhan = new Person('Jhan', 'Silva', 1.70);
+var eze = new Person('Ezequiel', 'Romero', 1.80);
+
+````
+
+This is the way to create functions about an object.
+
+````
+
+Person.prototype.wave = function () {
+    console.log(`Hi, my name is ${this.name} ${this.lastname}`)
+}
+
+jhan.wave();
+
+Person.prototype.istall = function () {
+    if (this.height >= 1.80) {
+        console.log(`Soy alto perros`);
+    } else {
+        console.log(`Soy enano perros`);
+    }
+}
 
 ````
