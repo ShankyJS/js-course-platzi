@@ -740,3 +740,49 @@ This is not who we are waiting to be, In a arrow function "this" points to the t
 Window.height don't exists, so this will return a fail.
 
 ## Class 24 (The dark side about classes on JavaScript.)
+
+There is no herency on JavaScript, but we can find something similar named: Prototype Herency.
+
+We can create child prototypes or sub-prototypes of a person.
+
+````
+
+function inheritOf(PrototypeSon, PrototypeDad){
+    var fn = function () {}
+    fn.prototype = PrototypeDad.prototype;
+    PrototypeSon.prototype = new fn;
+    PrototypeSon.prototype.constructor = PrototypeSon;
+}
+
+
+function Person(name, lastname, height){
+    this.name = name;
+    this.lastname = lastname;
+    this.height = height;
+}
+
+var Jhan = new Person('Jhan', 'Silva', 1.75)
+
+
+
+Person.prototype.wave = function () {
+    console.log(`Helo, my name is ${this.name} ${this.lastname}`);
+}
+
+Person.prototype.isTall = function () {
+    return this.height > 1.8;
+}
+
+function Developer(name, lastname) {
+    this.name = name;
+    this.lastname = lastname;
+}
+
+inheritOf(Developer, Person);
+
+Developer.prototype.wave = function () {
+    console.log(`Hello, my name is ${this.name} ${this.lastname} and I'm a NodeJS developer`)
+}
+
+
+````
