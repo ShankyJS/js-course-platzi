@@ -786,3 +786,46 @@ Developer.prototype.wave = function () {
 
 
 ````
+
+## Class 25 (Classes in JavaScript)
+
+In this class I learned how to write a "class" on JavaScript, but I ever have to remind that classes doesn't exists on JS, they are just prototypes.
+
+With Class Persona we can start our new prototype and with Constructor we can specify the attributes of the prototype.
+
+````
+class Persona {
+    constructor(nombre, apellido, altura){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.altura = altura;
+    }
+
+    saludar() {
+        console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`);
+    }
+
+    soyAlto() {
+        return this.altura > 1.8;
+    }
+}
+
+````
+
+This is a easiest way to inherit the JavaScript Classes.
+
+We have to use "super" for get all the fields of the original prototype.
+````
+
+//Herencia a clase Developer (extension)
+class Developer extends Persona {
+    constructor(nombre, apellido, altura) {
+        super(nombre, apellido, altura);
+    }
+
+    saludar () {
+        console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy NodeJS Dev`)
+    }
+}
+
+````
