@@ -894,3 +894,20 @@ Jhan.saludar(responderSaludo);
 Erick.saludar(responderSaludo);
 John.saludar(responderSaludo);
 ````
+
+## How the time works on JS
+
+What I understand about this topic is that JavaScript has a main thread on his body.
+If we block the usual loop of the application with TimeOuts that tasks will be executed when all the main flow of the application ends. 
+
+Like this example:
+
+````{JavaScript}
+setTimeout(() => console.log('d'), 2000);
+for (let i = 0; i < 10; i++ ) {
+    console.log(i);
+}
+
+````
+
+The letter "d" will be printed until our for cycle is complete, regardless of whether the "d" is already ready to run
