@@ -833,7 +833,7 @@ class Developer extends Persona {
 
 ````
 
-## Class 25 (Functions as parameters.)
+## Class 26 (Functions as parameters.)
 
 In this class we create a function called "AnswerWave", we send a new parameter on this function called "esDev", it will return a console.log when is true.
 
