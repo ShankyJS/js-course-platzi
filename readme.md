@@ -1,22 +1,24 @@
-# JavaScript is not a typed Language.
+# JavaScript is not a typed Language
 
-You don't have to specify what type of data will be stored in a variable. JavaScript automatically detects the data type based on what information you are assign to it. 
+You don't have to specify what type of data will be stored in a variable. JavaScript automatically detects the data type based on what information you are assign to it
 
-The Typed languages (like Java, C#) need to declare the variable's type and can't be changed. 
+The Typed languages (like Java, C#) need to declare the variable's type and can't be changed
 
-"This is both a blessing and a curse" because this flexibility can helps us to protect us from spend hours debugging something because a type error. 
+"This is both a blessing and a curse" because this flexibility can helps us to protect us from spend hours debugging something because a type error
 
 ## Class 2 (tips)
 
-Here is a way to insert JavaScript code in texts, also this is the solution for the first test, show to the user his first letter. 
+Here is a way to insert JavaScript code in texts, also this is the solution for the first test, show to the user his first letter
 
-````
+````"JavaScript"
+
 alert(`La primera letra de tu nombre es ${nombre.charAt(0)}`)
+
 ````
 
 Other solution
 
-````
+````"JavaScript"
 
 var name = prompt ('Give me your name');
 
@@ -29,7 +31,7 @@ returnsTheLastLetter(name);
 
 ````
 
-On this class we learn how to work with the most common strings on JavaScirpts, here is a useful function that allows you to concatenate substrings values into another one. 
+On this class we learn how to work with the most common strings on JavaScirpts, here is a useful function that allows you to concatenate substrings values into another one.
 
 ````
 var str2 = nombre.substr(1, 2);
@@ -815,7 +817,8 @@ class Persona {
 This is a easiest way to inherit the JavaScript Classes.
 
 We have to use "super" for get all the fields of the original prototype.
-````
+
+````{JavaScript}
 
 //Herencia a clase Developer (extension)
 class Developer extends Persona {
@@ -828,4 +831,66 @@ class Developer extends Persona {
     }
 }
 
+````
+
+## Class 25 (Functions as parameters.)
+
+In this class we create a function called "AnswerWave", we send a new parameter on this function called "esDev", it will return a console.log when is true.
+
+In this function we just evaluate if isDev is true.
+
+```` {JavaScript}
+class Persona {
+    constructor(nombre, apellido, altura){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.altura = altura;
+    }
+
+    saludar(fn) {
+        var nombre = this.nombre;
+        var apellido = this.apellido;
+        console.log(`Hola, me llamo ${nombre} ${apellido}`);
+        if (fn) {
+            fn(nombre, apellido, null);
+        }
+    }
+
+    soyAlto() {
+        return this.altura > 1.8;
+    }
+}
+
+//Herencia a clase Developer (extension)
+class Developer extends Persona {
+    constructor(nombre, apellido, altura) {
+        super(nombre, apellido, altura);
+    }
+
+    saludar (fn) {
+
+        var { nombre, apellido } = this;
+        // var nombre = this.nombre;
+        // var apellido = this.apellido;
+        console.log(`Hola, me llamo ${nombre} ${apellido} y soy NodeJS Dev`)
+        if (fn) {
+            fn(nombre, apellido, true);
+        }
+    }
+}
+
+var Jhan = new Persona('Jhan', 'Silva', 1.80);
+var Erick = new Persona('Erick', 'Rojas', 1.80);
+var John = new Developer('John', 'Maverick', 1.80);
+
+function responderSaludo (nombre, apellido, esDev) {
+    console.log(`Buen dia ${nombre} ${apellido}`);
+    if (esDev) {
+        console.log(`Ah mira, no sabia que eras desarrollador`);
+    }
+}
+
+Jhan.saludar(responderSaludo);
+Erick.saludar(responderSaludo);
+John.saludar(responderSaludo);
 ````

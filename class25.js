@@ -24,3 +24,7 @@ class Developer extends Persona {
         console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy NodeJS Dev`)
     }
 }
+
+var Jhan = new Persona('Jhan', 'Silva', 1.80);
+
+Jhan.saludar();
