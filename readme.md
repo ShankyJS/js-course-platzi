@@ -911,3 +911,80 @@ for (let i = 0; i < 10; i++ ) {
 ````
 
 The letter "d" will be printed until our for cycle is complete, regardless of whether the "d" is already ready to run
+
+## Class 28 (Callbacks)
+
+A callback is a function that is to be executed after antoher function has finished executing (hence the name "call back").
+
+In JS, Functions are objects, Functions can take functions as arguments, and can be return by other fucntions.
+The function that do this are called ``higher-order functions.`` Any functon that is passed as an argument is called a callback function.
+
+### Why do we need Callbacks
+
+JavaScript is an event driven laguage. THis means that instead of waiting for a response before moving on, JS will keep executing while listening for other events.
+
+````{JavaScript}
+
+function primera() {
+    console.log(`This will be printed first`);
+}
+
+function segunda() {
+    console.log(`This will be printed second`);
+}
+
+primera();
+segunda();
+
+````
+
+As we would expect, the function "primera" is executed first.
+
+``All good so far.``
+
+But what if function ``primera`` contains some sort of code that can't be executed inmediately? For example an API request where we have to send the request then wait for the response.
+
+```` {JavaScript}
+function first(){
+  // Simulate a code delay
+  setTimeout( function(){
+    console.log(1);
+  }, 500 );
+}
+function second(){
+  console.log(2);
+}
+first();
+second();
+````
+
+Now what will be first? Even we invoked the first function (1st), we logged out the result of that function after the second function.
+
+Now, this is a good example of callbacks, first we are going to create a function called doHomeWork and it will return an alert.
+
+````{JavaScript}
+function doHomework(subject) {
+    alert(`Starting my ${subject} homework.`);
+}
+````
+
+Now, we can pass by the argument our subject with: ``doHomework('math');``
+
+Now, lets add in our callback our paramenter in the doHomework() function we can pass in callback.
+
+````{JavaScript}
+
+function doHomework(subject, callback) {
+    alert(`Starting my ${subject} homework.`);
+    callback();
+}
+
+function alertFinished(){
+    alert('Finished my homework');
+}
+
+
+doHomework('math', alertFinished);
+
+
+````
