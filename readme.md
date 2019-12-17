@@ -1056,6 +1056,7 @@ getCharacter(1, function () {
 
 
 ````
+
 ## Class 31 (Managing errors with callbacks )
 
 Today I learned a new method to manage the errors with callbacks, Is another callback called failed that executes when something goes wrong.
@@ -1072,3 +1073,104 @@ function getCharacter(id, callback) {
     });
 }
 ````
+
+## Class 32 (Promises)
+
+Let's think the promises as values that we don't know yet. If a browser can't run in our browser, It will create a class promise.
+
+When an action will be executed, there will be a value, that's a succesful promise.
+
+The promises have 3 status.
+
+1. Pending:
+    * When we create a promise, It will be created in this status.
+
+2. Fullfilled:
+    * If the promise gets a result, will be converted to this status.
+        * We can catch the value with .then()
+
+3. Rejected:
+    * If the promise don't get a result, will fail and will get this status.
+        * We can catch the error with .catch()
+
+````{JS}
+
+new Promise(function(resolve,reject){
+   
+    }).then(value=>{
+
+    }).catch(err=>{
+
+});
+
+````
+
+````{JS}
+
+function getCharacter(id) {
+    return new Promise((resolve, reject) => {
+        const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`;
+        $.get(url, opts, function (data) {
+        resolve(data)
+        })
+        .fail(() => reject(id));
+    })
+}
+
+const onError = (id) => {
+    console.log(`Sucedio un erorr al obtener ${id}`)
+};  
+
+getCharacter(1)
+//Se ejecutara cuando la promesa se resuelva.
+    .then((character)=> {
+        console.log(`The character 1 is: ${character.name}`);
+    })
+    .catch(onError);
+
+````
+
+## Class 33 (Multiple Promises, chained.)
+
+Now we are going to chain a lot of promises (Like we did with callbacks, but this looks awesome.)
+
+
+````
+const onError = (id) => {
+    console.log(`Sucedio un erorr al obtener ${id}`)
+};  
+
+getCharacter(1)
+    .then(character => {
+        console.log(`The character 1 is: ${character.name}`);
+        return getCharacter(2);
+    })
+    .then(character2 => {
+        console.log(`The character 2 is: ${character2.name}`);
+        return getCharacter(3);
+    })
+    .then(character3 => {
+        console.log(`The character 3 is: ${character3.name}`);
+        return getCharacter(4);
+    })
+    .then(character4 => {
+        console.log(`The character 4 is: ${character4.name}`);
+        return getCharacter(5);
+    })
+    .then(character5 => {
+        console.log(`The character 5 is: ${character5.name}`);
+        return getCharacter(6);
+    })
+    .then(character6 => {
+        console.log(`The character 6 is ${character6.name}`);
+        return getCharacter(7);
+    })
+    .then(character7 => {
+        console.log(`The character 7 is ${character7.name}`);
+        return getCharacter(7);
+    })
+    .catch(onError);
+
+````
+
+## Class 34 (Promises in Parallel)
