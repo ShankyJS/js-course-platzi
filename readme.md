@@ -1174,3 +1174,84 @@ getCharacter(1)
 ````
 
 ## Class 34 (Promises in Parallel)
+
+Before this, we do all the promises in series.
+
+Now I learned how to put all the promises in an array and to Do the request in paralel mode.
+
+````{JS}
+
+const API_URL = 'https://swapi.co/api/';
+const PEOPLE_URL = 'people/:id'
+const opts = { crossDomain: true };
+
+function getCharacter(id) {
+    return new Promise((resolve, reject) => {
+        const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`;
+        $.get(url, opts, function (data) {
+        resolve(data)
+        })
+        .fail(() => reject(id));
+    })
+}
+
+const onError = (id) => {
+    console.log(`Sucedio un erorr al obtener ${id}`)
+};  
+
+var ids = [1, 2, 3, 4, 5, 6 ,7, 8 ,9 ,10];
+
+//Map takes an array and modifies all the elements.
+
+var promises = ids.map(id => getCharacter(id))
+Promise
+    .all(promises)
+    .then(characters => console.log(characters))
+    .catch(onError);
+
+````
+
+## Class 35 Async and Await
+
+There’s a special syntax to work with promises in a more comfortable fashion, called “async/await”. It’s surprisingly easy to understand and use.
+
+````
+async function name([param[, param[, ... param]]]) {
+   statements
+}
+````
+
+
+```` [JS]
+const API_URL = 'https://swapi.co/api/';
+const PEOPLE_URL = 'people/:id'
+const opts = { crossDomain: true };
+
+function getCharacter(id) {
+    return new Promise((resolve, reject) => {
+        const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`;
+        $.get(url, opts, function (data) {
+        resolve(data)
+        })
+        .fail(() => reject(id));
+    })
+}
+
+const onError = (id) => {
+    console.log(`Sucedio un erorr al obtener ${id}`)
+};  
+
+async function getCharacters() {
+    var ids = [1, 2, 3, 4, 5, 6 ,7, 8 ,9 ,10];
+    var promises = ids.map(id => getCharacter(id))
+
+    try {
+        var characters = await Promise.all(promises)
+        console.log(characters)
+    } catch (id) {
+        onError(id)
+    }
+}
+
+getCharacters()
+````
