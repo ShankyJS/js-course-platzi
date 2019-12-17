@@ -988,3 +988,87 @@ doHomework('math', alertFinished);
 
 
 ````
+
+## Class 29 (Multiples requests)
+
+We really don't know the order of how the characters are coming, regardless the order we invoke the functions ids. 
+
+The final result depends on the server potential and how it process the requests.
+
+````
+const API_URL = 'https://swapi.co/api/';
+const PEOPLE_URL = 'people/:id'
+const opts = { crossDomain: true };
+
+const onPeopleResponse = function (character) {
+    console.log(`Hello, I'm ${character.name}`);
+}
+
+function getCharacter(id) {
+    const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`;
+    $.get(url, opts, onPeopleResponse);
+}
+
+// var id = prompt `Hello, please type an ID`;
+
+getCharacter(1);
+getCharacter(2);
+getCharacter(3);
+
+````
+
+## Class 30 (Managing the order and THe asynscronism )
+
+There are some ways to organize our requests, but at this moment I just have learned how to do it using the Callback Hell, the problem with this is that the code will be increase on horizontal way. 
+(And looks horrible)
+
+```` {JavaScript}
+const API_URL = 'https://swapi.co/api/';
+const PEOPLE_URL = 'people/:id'
+const opts = { crossDomain: true };
+
+
+function getCharacter(id, callback) {
+    const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`;
+    $.get(url, opts, function (character) {
+        console.log(`Hello, I'm ${character.name}`);
+
+        if (callback) {
+            callback()
+        }
+    });
+}
+
+//Callback Hell
+getCharacter(1, function () {
+    getCharacter(2, function () {
+        getCharacter(3, function () {
+            getCharacter(4, function () {
+                getCharacter(5, function() {
+                    getCharacter(6, function() {
+                        getCharacter(7)
+                    });
+                });
+            });
+        });
+    });
+});
+
+
+````
+## Class 31 (Managing errors with callbacks )
+
+Today I learned a new method to manage the errors with callbacks, Is another callback called failed that executes when something goes wrong.
+
+````{JS}
+
+function getCharacter(id, callback) {
+    const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`;
+    
+    $
+        .get(url, opts, callback)
+        .fail(() => {
+        console.log(`An error was encountered, We can't get your character id.`);
+    });
+}
+````
