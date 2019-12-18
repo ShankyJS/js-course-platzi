@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+        Factorizacion: 6 = 6 * 5 * 4 * 3 * 2 * 1 = 720
+                      12 = 12 * 11 * 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = ?
+    */
+
+
+    function factorial(num) {
+
+        if(!this.cache) {
+            this.cache = {}
+        }
+
+        if(this.cache[num]) {
+            debugger
+            return this.cache[num];
+        }
+
+        if (num === 1) {
+
+            return 1
+
+        } else {
+
+            this.cache[num] = num * factorial(num-1);
+            debugger
+            return this.cache[num];
+
+            // 6 * factorial de (5), luego factorial de 4 .... etc
+        }
+    }
+    </script>
+</body>
+</html>

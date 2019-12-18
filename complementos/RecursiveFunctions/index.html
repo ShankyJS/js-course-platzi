@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        /*
+            A recursive function is that can execute it self unless a base condition gets true. 
+
+            13 | 4____
+
+            13 - 4 = 9      1
+            9 - 4  = 5      1
+            5 - 4  = 1      1
+            1 - 4  = -3     
+            Debe de ser mayor o igual, no puede dar negativo
+        */
+
+        function divisionEntera(dividendo, divisor) {
+            if (dividendo < divisor) {
+                return 0
+            } else {
+                return 1 + divisionEntera(dividendo - divisor, divisor)
+            }
+        }
+
+    </script>
+</body>
+</html>

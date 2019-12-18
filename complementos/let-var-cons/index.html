@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var jhan = {
+            nombre : 'Jhan',
+            apellido: 'Silva',
+            edad: 19
+        }
+
+        
+        function esMayorDeEdad(persona) {
+            let mensaje
+            const MAYORIA_EDAD = 18; // We can't reasign a constant variable.
+            if (persona.edad >= MAYORIA_EDAD) {
+                mensaje = 'Es mayor de edad'
+            } else {
+                mensaje = 'Es menor de edad'
+            }
+
+            console.log(mensaje)
+        }
+
+        esMayorDeEdad(jhan);
+        // Let reduce su alcance hacia el bloque de codigo donde es creado
+    </script>
+</body>
+</html>
